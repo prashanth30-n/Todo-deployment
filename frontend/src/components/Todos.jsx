@@ -7,7 +7,7 @@ function Todos()   {
     const navigate=useNavigate();
     const fetchTodos=async()=>{
         try{
-            const response=await axios.get("http://localhost:3000/api/todos",{
+            const response=await axios.get(`${process.env.REACT_APP_API_URL}/api/todos`,{
                 headers:{
                     Authorization:`Bearer ${localStorage.getItem("token")}`
                 }
@@ -21,7 +21,7 @@ function Todos()   {
     }
    const addTodo=async()=>{
     try{
-        await axios.post("http://localhost:3000/api/todos",{
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/todos`,{
             title: newTodo
         },{
             headers:{
