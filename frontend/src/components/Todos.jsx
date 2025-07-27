@@ -38,7 +38,7 @@ function Todos()   {
    }
    const deleteTodo =async(id)=>{
     try{
-        await axios.delete(`http://localhost:3000/api/todos/${id}`,{
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/todos/${id}`,{
             headers:{
                 Authorization:`Bearer ${localStorage.getItem("token")}`
             }
