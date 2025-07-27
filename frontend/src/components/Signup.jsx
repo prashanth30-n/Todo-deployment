@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+require("dotenv").config();
 function Signup(){
 const[username,setUsername]=useState("");
 const[password,setPassword]=useState("");
